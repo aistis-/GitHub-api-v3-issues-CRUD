@@ -39,6 +39,10 @@ class IssueBinding
      */
     private static function createNewIssue(array $params)
     {
+        if (0 === count($params)) {
+            return null;
+        }
+
         return (new Issue())
             ->setNumber($params['number'])
             ->setTitle($params['title'])
