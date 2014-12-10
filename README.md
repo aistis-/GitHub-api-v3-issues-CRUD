@@ -13,5 +13,5 @@ No high-level security.
 1. SSH to Vagrant `vagrant ssh`
 1. Install dependencies via  composer `composer install`
 1. Do not forget legit parameters
-1. Try to access `http://github.dev/{username}/{repository_name}` (e.g. `http://github.dev/{symfony}/{symfony}`)
-1. Expect it is working
+1. Try to access `http://github.dev/{username}/{repository_name}/issues` (e.g. `http://github.dev/aistis-/GitHub-api-v3-issues-CRUD/issues`)
+1. Expect it works
