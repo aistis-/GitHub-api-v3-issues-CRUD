@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <div class="btn-group pull-right">
+        <a class="btn btn-default" href="{{ path('issue_create', {'username': username, 'repository': repository} ) }}">
+            {{ 'create_new'|trans }}
+        </a>
+    </div>
+
+    <h1>{{ 'issues'|trans }}</h1>
+
+    {% if 0 < issues|length %}
+        <table class='table table-hover table-responsive table-bordered table-striped'>
+            <tr>
+                <th>{{ 'number'|trans }}</th>
+                <th>{{ 'title'|trans }}</th>
+                <th>{{ 'state'|trans }}</th>
+            </tr>
+
+            {% for issue in issues %}
+                {% set path = path(
+                    'issue_show',
+                    {'username': username, 'repository': repository, 'number': issue.number}
+                ) %}
+
+                <tr>
+                    <td>{{ issue.number }}</td>
+                    <td>
+                        <a href="{{ path }}">{{ issue.title }}</a>
+                    </td>
+                    <td>{{ issue.state }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>{{ 'no_issues_found'|trans }}</p>
+    {% endif %}
+
+{% endblock %}

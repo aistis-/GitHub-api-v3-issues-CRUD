@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block content %}
+    <div class="btn-group pull-right">
+        <a class="btn btn-default" href="{{ path('issue_list', {'username': username, 'repository': repository} ) }}">
+            {{ 'back_to_list'|trans }}
+        </a>
+    </div>
+
+    <h1>{{ 'issue'|trans }}</h1>
+
+    {{ form(form) }}
+
+{% endblock %}

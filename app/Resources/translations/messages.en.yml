@@ -1,0 +1,14 @@
+issues: Issues
+issue: Issue
+number: ID number
+title: Title
+body: Body
+state: State
+no_issues_found: No issues found
+create_new: Create new
+edit: Edit
+created_at: Created at
+updated_at: Updated at
+back_to_list: Back to list
+open: Open
+closed: Closed
